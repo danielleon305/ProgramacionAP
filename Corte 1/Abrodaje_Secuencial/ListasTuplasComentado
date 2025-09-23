@@ -65,27 +65,28 @@ print(my_tupla[0]) # Accede a los elementos de la tupla en las posiciones 0 y 2
 print(my_tupla[2])
 
 
-#Evaluar si un elemento está contenido en la tupla (Devuelve un valor booleano)
+# Verificar si un valor está dentro de la tupla (True o False)
 print('Rojo' in my_tupla)
-print(my_tupla.count('Rojo'))
+print(my_tupla.count('Rojo'))   # Cuenta cuántas veces aparece 'Rojo' en la tupla
 
-#Tupla con un solo elemento
+# Crear una tupla con un solo elemento 
 my_tupla_unitaria = ('Blanco',)
 print(my_tupla_unitaria)
 
-#Empaquetado de tupla, tupla sin paréntesis
+# Empaquetar una tupla sin necesidad de usar paréntesis
 my_tupla = 'Juan', 12, 1, 2008
 print(my_tupla)
 
-#Desempaquetado de tupla, se guardan los valores en orden de las variables
+# Desempaquetar la tupla: cada valor se asigna en orden a las variables
 nombre, dia, mes, año = my_tupla
 print(nombre)
 print(dia)
 print(mes)
 print(año)
 
+# Imprimir todos los valores desempaquetados en una sola línea
 print("Nombre: ", nombre, " - Dia:", dia, " - Mes: ", mes, "- Año: ", año)
 
-#Convertir una tupla en una lista
-my_lista2=list(my_tupla)
+# Convertir una tupla en lista para poder modificar sus elementos
+my_lista2 = list(my_tupla)
 print(my_lista2)
