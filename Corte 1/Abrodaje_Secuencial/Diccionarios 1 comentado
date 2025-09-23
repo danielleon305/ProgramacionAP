@@ -1,0 +1,126 @@
+# Diccionario con sensores y temperaturas en habitaciones
+sensores = {"sala": 21, "cocina": 23, "dormitorio": 20, "despensa": 22}
+num_camaras = {"patio trasero": 6, "garaje": 2, "entrada": 1}
+
+print(sensores)        # Imprime todas las claves y valores del diccionario sensores
+print(num_camaras)     # Imprime todas las claves y valores del diccionario num_camaras
+
+# Diccionario de traducciones inventadas
+traducciones = {"montaña": "orod", "pan": "bass", "amigo": "mellon", "caballo": "roch"}
+print(traducciones)    # Imprime el diccionario de traducciones
+
+
+## Verificación de error:
+# Esto da error porque las listas [ ] no pueden ser claves en un diccionario
+# poderes = {[1, 2, 4, 8, 16]: 2, [1, 3, 9, 27, 81]: 3}
+# print(poderes)
+
+
+# Diccionario donde los valores son listas
+hijos = {
+    "von Trapp": ["Johannes", "Rosmarie", "Eleonore"], 
+    "Corleone": ["Sonny", "Fredo", "Michael"]
+}
+print(hijos)
+
+
+# Diccionario vacío
+mi_diccionario_vacio = {}
+print(mi_diccionario_vacio)
+
+
+# Ejemplo de menú de un restaurante
+menu = {"avena": 3, "tostada de aguacate": 6, "jugo de zanahoria": 5, "muffin de arándanos": 2}
+print("Antes: ", menu)
+
+# Se agrega un nuevo plato con su precio
+menu["tarta de queso"] = 8
+print("Después: ", menu)
+
+
+# Ejemplo de sobrescribir diccionario
+animales_zoologico = {"dinosaurios": 0}
+animales_zoologico = {"caballos": 2}  # Se reemplaza completamente el diccionario
+print(animales_zoologico)
+
+
+## Agregar múltiples claves
+sensores = {"sala": 21, "cocina": 23, "dormitorio": 20}
+print("Antes: ", sensores)
+
+# Agregar varias claves y valores a la vez con .update()
+sensores.update({"despensa": 22, "habitación de invitados": 25, "patio": 34})
+print("Después: ", sensores)
+
+
+# Ejemplo con usuarios
+usuarios_id = {"teraCoder": 9018293, "proProgramador": 119238}
+print(usuarios_id)
+
+usuarios_id.update({"elBucleador": 138475, "reinaCadenas": 85739})
+print(usuarios_id)
+
+
+## Sobrescribir valores ##
+# Para cambiar el valor de una clave existente se puede asignar directamente
+menu = {"avena": 3, "tostada de aguacate": 6, "jugo de zanahoria": 5, "muffin de arándanos": 2}
+print("Antes: ", menu)
+
+menu["avena"] = 5  # Se cambia el precio de "avena"
+print("Después: ", menu)
+
+
+# Ejemplo con ganadores del Óscar
+ganadores_oscar = {"Mejor Película": "La La Land", "Mejor Actor": "Casey Affleck", "Mejor Actriz": "Emma Stone", "Película Animada": "Zootopia"}
+print("Antes: ", ganadores_oscar)
+print()
+
+# Se agrega una nueva categoría
+ganadores_oscar.update({"Actriz de Reparto": "Viola Davis"})
+print("Después1: ", ganadores_oscar)
+print()
+
+# Se corrige el ganador de Mejor Película
+ganadores_oscar["Mejor Película"] = "Moonlight"
+print("Después2: ", ganadores_oscar)
+
+
+### Comprensiones de diccionarios ###
+# Tenemos dos listas: nombres de estudiantes y sus alturas en pulgadas
+nombres = ['Jenny', 'Alexus', 'Sam', 'Grace']
+alturas = [61, 70, 67, 64]
+
+# zip() combina ambas listas en pares (tuplas)
+# estudiantes = {clave:valor for clave, valor in zip(nombres, alturas)}
+# Ahora estudiantes es {'Jenny': 61, 'Alexus': 70, 'Sam': 67, 'Grace': 64}
+# print(estudiantes)
+
+
+# Otro ejemplo con bebidas y cafeína
+bebidas = ["espresso", "chai", "descafeinado", "filtrado"]
+cafeina = [64, 40, 0, 120]
+
+# Se crea un diccionario a partir de las dos listas
+bebidas_a_cafeina = {clave:valor for clave, valor in zip(bebidas, cafeina)}
+print(bebidas_a_cafeina)
+
+
+# Ejemplo con canciones y número de reproducciones
+canciones = ["Like a Rolling Stone", "Satisfaction", "Imagine", "What's Going On", "Respect", "Good Vibrations"]
+conteo_reproducciones = [78, 29, 44, 21, 89, 5]
+
+# Se crea un diccionario uniendo las dos listas
+reproducciones = {clave:valor for clave, valor in zip(canciones, conteo_reproducciones)}
+print(reproducciones)
+
+# Se agrega una nueva canción
+reproducciones.update({"Purple Haze": 1})
+
+# Se actualiza el número de reproducciones de una canción existente
+reproducciones.update({"Respect": 94})
+
+print("Después: ", reproducciones)
+
+# Diccionario que contiene bibliotecas de canciones
+biblioteca = {"Las Mejores Canciones": reproducciones, "Domingos Relajados": {}}
+print(biblioteca)
