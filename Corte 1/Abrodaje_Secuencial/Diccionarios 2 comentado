@@ -1,0 +1,171 @@
+# #### Obtener un valor usando una clave
+# Acceder a valores de un diccionario a partir de la clave:
+
+# Diccionario con edificios y sus alturas (en metros)
+alturas_edificios = {
+    "Burj Khalifa": 828,
+    "Torre de Shanghái": 632,
+    "Abraj Al Bait": 601,
+    "Ping An": 599,
+    "Torre Lotte World": 554.5,
+    "One World Trade": 541.3
+}
+
+# Se obtiene el valor de la clave "Burj Khalifa" → 828
+print(alturas_edificios.get("Burj Khalifa"))  # Imprime 828
+# Se obtiene el valor de la clave "Ping An" → 599
+print(alturas_edificios.get("Ping An"))       # Imprime 599
+
+
+# Diccionario con los elementos del zodiaco y sus signos
+elementos_zodiaco = {
+    "agua": ["Cáncer", "Escorpio", "Piscis"], 
+    "fuego": ["Aries", "Leo", "Sagitario"], 
+    "tierra": ["Tauro", "Virgo", "Capricornio"], 
+    "aire": ["Géminis", "Libra", "Acuario"]
+}
+
+# Accede a la lista de signos de tierra
+print(elementos_zodiaco.get("tierra"))  # Lista de signos de tierra
+# Accede a la lista de signos de fuego
+print(elementos_zodiaco.get("fuego"))   # Lista de signos de fuego
+
+
+# ## Intento con una clave que no existe
+# Como la clave no está, devuelve None en lugar de error
+print(alturas_edificios.get("Landmark 81"))  # No da error
+
+
+# ## Verificar si la clave existe antes de usarla
+clave_a_verificar = "Landmark 81"
+# Se comprueba si la clave está en el diccionario
+if clave_a_verificar in alturas_edificios:
+    print(alturas_edificios[clave_a_verificar])
+else:
+    print("La clave", clave_a_verificar, "no existe en alturas_edificios")
+
+
+# Se agrega un nuevo par clave-valor al diccionario
+elementos_zodiaco["energía"] = "No es un elemento zodiacal"
+
+# Verificación de la clave agregada
+if "energía" in elementos_zodiaco:
+    print(elementos_zodiaco["energía"])  # Imprime el valor agregado
+
+
+# ## Obtener de forma segura un valor con .get()
+print(alturas_edificios.get("Torre de Shanghái"))  # 632
+print(alturas_edificios.get("Mi Casa"))            # None (no existe la clave)
+
+
+# Diccionario con usuarios y sus ID
+usuarios_id = {"teraCoder": 100019, "chicoPython": 182921, "samLaJava": 123112, "lauraLoop": 102931, "keithLlaves": 129384}
+print(usuarios_id.get("teraCoder"))  # Devuelve 100019
+
+# Verificamos si existe un usuario y asignamos un valor alternativo
+if usuarios_id.get("teraCoder") == None:
+    id_tc = 1000
+else:
+    id_tc = usuarios_id.get("teraCoder")
+
+print(id_tc)  # Imprime 100019
+
+# Otro ejemplo con un usuario que no existe
+if usuarios_id.get("superStackSmash") == None:
+    id_stack = 100000
+
+print(id_stack)  # Imprime 100000
+
+
+# ### Eliminar una clave de forma segura con .pop()
+rifa = {223842: "Osito de peluche", 872921: "Boletas de concierto", 320291: "Canasta de regalo", 412123: "Collar", 298787: "Máquina de pasta"}
+
+# Elimina la clave 320291 y devuelve el valor asociado
+print(rifa.pop(320291, "Sin premio"))  # "Canasta de regalo"
+print(rifa)  
+
+# Como la clave no existe, devuelve el valor por defecto
+print(rifa.pop(100000, "Sin premio"))  # "Sin premio"
+print(rifa)
+
+# Elimina la clave 872921 y devuelve su valor
+print(rifa.pop(872921, "Sin premio"))  # "Boletas de concierto"
+print(rifa)
+
+
+# Ejemplo práctico con puntos de vida
+objetos_disponibles = {
+    "poción de salud": 10, 
+    "pastel de la cura": 5, 
+    "elixir verde": 20, 
+    "sándwich de fuerza": 25, 
+    "granos de resistencia": 15, 
+    "guiso de poder": 30
+}
+puntos_vida = 20
+
+# Se suman los valores de objetos al puntaje de vida
+puntos_vida += objetos_disponibles.pop("granos de resistencia", 0)
+puntos_vida += objetos_disponibles.pop("guiso de poder", 0)
+puntos_vida += objetos_disponibles.pop("pan místico", 0)  # No existe, devuelve 0
+
+# Diccionario después de usar pop()
+print(objetos_disponibles)  
+# Nueva cantidad de puntos de vida
+print(puntos_vida)
+
+
+# ## Obtener todas las claves
+notas_examen = {
+    "Grace":[80, 72, 90], "Jeffrey":[88, 68, 81], 
+    "Sylvia":[80, 82, 84], "Pedro":[98, 96, 95], 
+    "Martín":[78, 80, 78], "Dina":[64, 60, 75]
+}
+
+# Convierte las claves en una lista
+print(list(notas_examen))  
+
+# Recorre todas las claves del diccionario
+for estudiante in notas_examen.keys():
+    print(estudiante)
+
+
+# Dos diccionarios: uno con usuarios y otro con ejercicios
+usuarios_id = {"teraCoder": 100019, "chicoPython": 182921, "samLaJava": 123112, "lauraLoop": 102931, "keithLlaves": 129384}
+num_ejercicios = {"funciones": 10, "sintaxis": 13, "flujo de control": 15, "bucles": 22, "listas": 19, "clases": 18, "diccionarios": 18}
+
+usuarios = usuarios_id.keys()   # Obtiene todas las claves de usuarios
+lecciones = num_ejercicios.keys()  # Obtiene todas las claves de lecciones
+
+print(usuarios)
+print(lecciones)
+
+
+# ## Obtener todos los valores
+# Recorre todas las listas de notas
+for lista_notas in notas_examen.values():
+    print(lista_notas)
+
+# Suma de todos los valores del diccionario de ejercicios
+total_ejercicios = sum(num_ejercicios.values())
+print(total_ejercicios)
+
+
+# ## Obtener todos los pares clave-valor
+marcas_mas_grandes = {"Apple": 184, "Google": 141.7, "Microsoft": 80, "Coca-Cola": 69.7, "Amazon": 64.8}
+
+# Recorre clave y valor de cada par
+for empresa, valor in marcas_mas_grandes.items():
+    print(empresa + " tiene un valor de " + str(valor) + " mil millones de dólares.")
+
+# Otro ejemplo con ocupaciones y porcentaje de mujeres
+porcentaje_mujeres_ocupacion = {
+    "CEO": 28, 
+    "Gerente de ingeniería": 9, 
+    "Farmacéutico": 58, 
+    "Médico": 40, 
+    "Abogado": 37, 
+    "Ingeniero aeroespacial": 9
+}
+for ocupacion, porcentaje in porcentaje_mujeres_ocupacion.items():
+    print("Las mujeres representan el " + str(porcentaje) + "% de los " + ocupacion + "s.")
