@@ -1,1 +1,110 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Música alternativa (pop)</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; margin:20px; line-height:1.5}
+    h1,h2,h3{margin:0 0 .5rem}
+    section{margin:1rem 0}
+    .galeria{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:10px}
+    .galeria img{width:100%; height:160px; object-fit:cover}
+    table{width:100%; border-collapse:collapse; margin-top:.5rem}
+    th,td{border:1px solid #ccc; padding:8px; text-align:left}
+    code{display:block; padding:10px; border:1px solid #ddd; border-radius:6px; white-space:pre; overflow:auto}
+  </style>
+</head>
+<body>
+  <h1>Música alternativa (pop)</h1>
 
+  <section>
+    <p>
+      El <b>pop alternativo</b> combina melodías accesibles con enfoques <i>experimentales</i>. 
+      Explora sonidos electrónicos, indie y rock suave, con letras introspectivas y arreglos creativos.
+      Suele resaltar por su producción flexible y estética particular. 
+      La palabra <span style="color:#d63031; font-weight:700">“alternativo”</span> sugiere libertad,
+      mientras que <span style="color:#0984e3"><em>“pop”</em></span> mantiene el gancho melódico.
+    </p>
+  </section>
+
+  <section>
+    <h2>Artistas y álbumes</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Artista</th>
+          <th>Álbum / Canción</th>
+          <th>Año</th>
+          <th>Contacto (ejemplo)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Billie Eilish</td>
+          <td><strong>WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?</strong></td>
+          <td>2019</td>
+          <td>billie@email.com — <small>+1 555 111 2222</small></td>
+        </tr>
+        <tr>
+          <td>Lorde</td>
+          <td><strong>Melodrama</strong></td>
+          <td>2017</td>
+          <td>lorde@email.com — <small>+64 555 333 444</small></td>
+        </tr>
+        <tr>
+          <td>The 1975</td>
+          <td><strong>A Brief Inquiry into Online Relationships</strong></td>
+          <td>2018</td>
+          <td>1975@email.com — <small>+44 555 777 888</small></td>
+        </tr>
+        <tr>
+          <td>Tame Impala</td>
+          <td><strong>Currents</strong></td>
+          <td>2015</td>
+          <td>tame@email.com — <small>+61 555 999 000</small></td>
+        </tr>
+        <tr>
+          <td>Lana Del Rey</td>
+          <td><strong>Born to Die</strong></td>
+          <td>2012</td>
+          <td>lana@email.com — <small>+1 555 222 3333</small></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Imágenes</h2>
+    <div class="galeria">
+      <img src="https://i.scdn.co/image/ab67616d0000b27353622dcd0c251b6b62615ecd" alt="Estética alternativa 1" />
+      <img src="https://i1.sndcdn.com/avatars-zRg67h8OmPY1X512-dugsQw-t240x240.jpg" alt="Estética alternativa 2" />
+    </div>
+  </section>
+
+  <section>
+    <h2>Enlaces</h2>
+    <p>
+      <a href="http://google.com/" target="_blank" rel="noopener">Ir a Google</a> ·
+      <a href="https://www.youtube.com/results?search_query=alternative+pop" target="_blank" rel="noopener">YouTube</a> ·
+      <a href="https://open.spotify.com/search/alternative%20pop" target="_blank" rel="noopener">Spotify</a>
+    </p>
+  </section>
+
+  <section>
+    <h2>Mi repositorio</h2>
+    <p>
+      Este es mi repositorio:  
+      <a href="https://github.com/danielleon305/ProgramacionAP.git" target="_blank" rel="noopener">
+        https://github.com/danielleon305/ProgramacionAP.git
+      </a>
+    </p>
+  </section>
+
+  <section>
+    <h3>Conclusión</h3>
+    <p>
+      El <strong>pop alternativo</strong> mantiene la accesibilidad del pop y adopta recursos poco convencionales. 
+      Esa mezcla permite propuestas con identidad, sin perder el foco en la <mark>melodía</mark>.
+    </p>
+  </section>
